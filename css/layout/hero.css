@@ -327,33 +327,142 @@
 @media (max-width: 768px) {
     .hero {
         padding: 1rem;
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        gap: 2rem;
+        padding: 2rem 0;
+    }
+
+    .hero-left {
+        margin-left: 0;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
     }
 
     .hero-image-wrapper {
-        width: 350px;
+        width: 280px;
+        margin: 0 auto;
+    }
+
+    .hero-text {
+        padding-top: 1rem;
     }
 
     .hero-header h1 {
-        font-size: 3rem;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
     }
 
-    .greeting, .role {
-        font-size: 1.4rem;
+    .greeting {
+        font-size: 1.2rem;
+    }
+
+    .role-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .role, .role-secondary {
+        font-size: 1.2rem;
+        white-space: normal;
+        text-align: center;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        margin: 1rem 0;
+        padding: 0 1rem;
+    }
+
+    .hero-right {
+        flex: none;
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0 1rem;
+    }
+
+    .about-dropdown {
+        width: 100%;
     }
 
     .about-toggle {
-        font-size: 1.2rem;
-        padding: 1.5rem 1.8rem;
+        padding: 1rem;
+        font-size: 1rem;
     }
 
     .about-content {
-        padding: 2rem;
-        font-size: 1.1rem;
+        padding: 1rem;
+    }
+
+    .about-tabs {
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .tab-btn {
-        font-size: 1.1rem;
-        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .tab-content {
+        font-size: 0.9rem;
+    }
+
+    .social-links {
+        position: relative;
+        left: auto;
+        top: auto;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .social-link {
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .hero-header h1 {
+        font-size: 2rem;
+    }
+
+    .hero-image-wrapper {
+        width: 240px;
+    }
+
+    .greeting, .role, .role-secondary {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 932px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .hero-image-wrapper {
+        width: 200px;
+    }
+
+    .hero-left {
+        flex-direction: row;
+        gap: 2rem;
     }
 }
 
