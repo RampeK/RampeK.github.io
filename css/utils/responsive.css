@@ -1,0 +1,14 @@
+@media (max-width: 768px) {
+    .skills-wrapper {
+        grid-template-columns: 1fr;
+    }
+    
+    .tech-icons {
+        gap: 1rem;
+    }
+    
+    .tech-icons img {
+        width: 30px;
+        height: 30px;
+    }
+}
