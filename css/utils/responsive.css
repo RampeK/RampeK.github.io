@@ -1,18 +1,17 @@
-/* Perus responsiivisuusasetukset */
+/* Varmistetaan perusasetukset */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
-html, body {
-    overflow-x: hidden;
-    width: 100%;
-    height: 100%;
+html {
+    scroll-behavior: smooth;
 }
 
 @media (max-width: 992px) {
     html {
         font-size: 14px;
+        overflow-x: hidden;
     }
 }

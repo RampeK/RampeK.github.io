@@ -328,3 +328,24 @@ section.visible {
         max-width: 40%;
     }
 }
+
+/* Lisää nämä */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+@media (max-width: 992px) {
+    body {
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        overflow-x: hidden;
+    }
+}
