@@ -86,6 +86,8 @@
     transition: all 0.3s ease;
     padding: 8px;
     border-radius: 50%;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .project-links a:hover {
@@ -160,6 +162,9 @@
 
 @media (max-width: 992px) {
     .project-links a {
-        padding: 12px;  /* Suurempi kosketusalue mobiililla */
+        padding: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }

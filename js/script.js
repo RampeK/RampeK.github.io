@@ -351,38 +351,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Apufunktio mobiililaitteen tunnistamiseen
-    const isMobile = () => {
-        return window.matchMedia("(max-width: 992px)").matches;
-    };
-
-    // Muuttuja viimeisimmän klikkauksen ajalle
-    let lastTapTime = 0;
-
-    // Projektikorttien käsittely
-    document.querySelectorAll('.project-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-            if (isMobile()) {
-                const currentTime = new Date().getTime();
-                const tapGap = currentTime - lastTapTime;
-
-                if (tapGap < 300 && tapGap > 0) {
-                    // Tuplaklikkaus - avataan linkki
-                    const url = card.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
-                    if (url) {
-                        window.open(url, '_blank');
-                    }
-                }
-
-                lastTapTime = currentTime;
-                e.preventDefault(); // Estetään normaali onclick
-            } else {
-                // Desktop-käyttäytyminen pysyy samana
-                const url = card.getAttribute('onclick')?.match(/'([^']+)'/)?.[1];
-                if (url) {
-                    window.open(url, '_blank');
-                }
-            }
-        });
-    });
+    // Kutsutaan touch-eventien alustusta
+    initializeTouchEvents();
 });
