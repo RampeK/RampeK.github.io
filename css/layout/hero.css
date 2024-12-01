@@ -336,9 +336,10 @@
 
     .hero-content {
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         width: 100%;
         height: auto;
+        padding: 0;
     }
 
     .hero-left {
@@ -351,8 +352,8 @@
     }
 
     .hero-image-wrapper {
-        width: 220px;
-        margin: 1rem auto;
+        width: 180px;
+        margin: 0 auto 1rem auto;
     }
 
     .hero-text {
@@ -360,18 +361,56 @@
         padding: 0;
     }
 
-    .hero-right {
-        display: none; /* Piilotetaan about-osio mobiilissa */
+    .hero-header h1 {
+        font-size: 2.2rem;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
     }
 
-    /* Varmistetaan että kaikki elementit mahtuvat näytölle */
-    .hero-header,
-    .role-container,
-    .hero-description,
-    .cta-section {
-        width: 100%;
+    .greeting {
+        font-size: 1.1rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .role-container {
+        margin-top: 0.5rem;
+    }
+
+    .role, .role-secondary {
+        font-size: 1rem;
+        line-height: 1.4;
         margin: 0;
-        padding: 0.5rem;
+    }
+
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        margin: 1rem auto;
+        max-width: 90%;
+        opacity: 0.9;
+    }
+
+    .cta-section {
+        display: none;
+    }
+
+    .hero-right,
+    .geometric-shapes,
+    .scroll-indicator {
+        display: none;
+    }
+
+    .social-links {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .social-link {
+        width: 2.5rem;
+        height: 2.5rem;
     }
 }
 
