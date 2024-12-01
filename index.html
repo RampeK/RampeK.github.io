@@ -2,7 +2,7 @@
 <html lang="fi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Portfolio CV</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
@@ -15,6 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://rampek.github.io">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <script src="js/script.js" defer></script>
+    <script src="js/translations.js" defer></script>
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="/manifest.json">
 </head>
 <body>
     <div class="background-animation">
@@ -333,11 +341,11 @@
             </div>
 
             <!-- Portfolio Page -->
-            <div class="project-card">
+            <div class="project-card" onclick="window.open('https://github.com/RampeK/RampeK.github.io', '_blank')">
                 <div class="project-folder">
                     <i class="far fa-folder"></i>
                     <div class="project-links">
-                        <a href="#" target="_blank">
+                        <a href="https://github.com/RampeK/RampeK.github.io" target="_blank">
                             <i class="fab fa-github"></i>
                         </a>
                     </div>
@@ -431,8 +439,10 @@
         </div>
     </section>
 
-    <!-- Skriptit -->
-    <script src="js/translations.js"></script>
-    <script src="js/script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/js/service-worker.js');
+        }
+    </script>
 </body>
 </html>

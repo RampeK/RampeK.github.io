@@ -118,12 +118,17 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
+                // Lopetetaan tarkkailu vain projektikorteille
+                if (entry.target.classList.contains('project-card')) {
+                    observer.unobserve(entry.target);
+                }
             }
         });
     }, observerOptions);
 
-    document.querySelectorAll('section').forEach(section => {
-        observer.observe(section);
+    // Tarkkaillaan sekä sektioita että projektikortteja
+    document.querySelectorAll('section, .project-card').forEach(element => {
+        observer.observe(element);
     });
 
     // Scroll indicator
@@ -343,4 +348,37 @@ document.addEventListener('DOMContentLoaded', () => {
             updateContent(lang);
         }
     };
+
+    function initializeTouchEvents() {
+        const cards = document.querySelectorAll('.project-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('touchstart', handleTouchStart, { passive: true });
+            card.addEventListener('touchmove', handleTouchMove, { passive: true });
+            card.addEventListener('touchend', handleTouchEnd);
+        });
+    }
+
+    function handleTouchStart(e) {
+        const card = e.currentTarget;
+        card.classList.add('touch-active');
+    }
+
+    function handleTouchMove(e) {
+        e.preventDefault(); // Estä scrollaus korttia koskettaessa
+    }
+
+    function handleTouchEnd(e) {
+        const card = e.currentTarget;
+        card.classList.remove('touch-active');
+        
+        // Avaa linkki vain jos korttia ei ole liikutettu
+        if (card.hasAttribute('onclick')) {
+            const url = card.getAttribute('onclick').match(/'([^']+)'/)[1];
+            window.open(url, '_blank');
+        }
+    }
+
+    // Lisää kutsu DOMContentLoaded-tapahtumankäsittelijään
+    initializeTouchEvents();
 });

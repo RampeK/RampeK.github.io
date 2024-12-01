@@ -166,8 +166,8 @@ body::before {
         position: static;
         flex-direction: row;
         justify-content: center;
-        margin-top: 2rem;
-        transform: none;
+        padding: 1rem;
+        gap: 1.5rem;
     }
 }
 
@@ -186,4 +186,134 @@ section {
 section.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Optimoi animoidut elementit */
+.animated-element {
+    will-change: transform;
+}
+
+.project-card {
+    contain: content;
+}
+
+.animated {
+    transform: translateZ(0);  /* Hardware acceleration */
+    transition: transform 0.3s ease-out;
+}
+
+/* Mobiilioptimoidut tyylit */
+@media (max-width: 768px) {
+    /* Korjaa navigaation asettelu mobiilissa */
+    nav {
+        padding: 1rem 0.5rem;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;  /* Salli rivien katkeaminen */
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    /* Korjaa hero-osion asettelu */
+    .hero-left {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .hero-right {
+        width: 100%;
+        margin-top: 2rem;
+    }
+
+    /* Korjaa projektikorttien grid */
+    .projects-grid {
+        grid-template-columns: 1fr;  /* Yksi kortti per rivi mobiilissa */
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    /* Korjaa skill-kategorioiden asettelu */
+    .skill-category {
+        padding: 1rem;
+    }
+
+    .skill-tags {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.8rem;
+    }
+
+    /* Paranna about-dropdown käytettävyyttä */
+    .about-tabs {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tab-btn {
+        padding: 0.8rem;
+        flex: 1;
+        min-width: 100px;
+    }
+
+    /* Korjaa sosiaalisten linkkien asettelu */
+    .social-links {
+        position: static;
+        flex-direction: row;
+        justify-content: center;
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+
+    /* Paranna tekstien luettavuutta */
+    .hero-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .role, .role-secondary {
+        font-size: 1rem;
+    }
+
+    /* Korjaa contact-osion asettelu */
+    .contact-content {
+        padding: 1rem;
+    }
+
+    .contact-methods {
+        width: 100%;
+    }
+
+    .contact-item {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+}
+
+/* Korjaukset pienille puhelimille */
+@media (max-width: 375px) {
+    .hero-header h1 {
+        font-size: 2rem;
+    }
+
+    .skill-tags {
+        grid-template-columns: 1fr;  /* Yksi tagi per rivi */
+    }
+
+    nav ul {
+        font-size: 0.9rem;
+    }
+}
+
+/* Varmista että sivusto toimii myös landscape-moodissa */
+@media (max-width: 932px) and (orientation: landscape) {
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .hero-image-wrapper {
+        max-width: 40%;
+    }
 }
