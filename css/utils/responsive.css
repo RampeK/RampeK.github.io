@@ -1,14 +1,18 @@
-@media (max-width: 768px) {
-    .skills-wrapper {
-        grid-template-columns: 1fr;
-    }
-    
-    .tech-icons {
-        gap: 1rem;
-    }
-    
-    .tech-icons img {
-        width: 30px;
-        height: 30px;
+/* Perus responsiivisuusasetukset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+@media (max-width: 992px) {
+    html {
+        font-size: 14px;
     }
 }

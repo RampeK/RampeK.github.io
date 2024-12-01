@@ -1,6 +1,8 @@
 /* Yleinen osioiden tyyli */
 section {
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
     position: relative;
     padding: 6rem 2rem;
 }
@@ -41,8 +43,9 @@ section::after {
 }
 
 /* Responsiivisuus */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     section {
+        min-height: auto;
         padding: 4rem 1rem;
     }
     

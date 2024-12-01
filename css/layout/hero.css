@@ -324,88 +324,54 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .hero {
-        padding: 1rem;
-        align-items: flex-start;
+        min-height: 100vh;
+        height: auto;
+        padding: 4rem 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
     }
 
     .hero-content {
         flex-direction: column;
         gap: 2rem;
-        padding-top: 4rem;
+        width: 100%;
+        height: auto;
     }
 
     .hero-left {
         margin: 0;
+        padding: 0;
+        width: 100%;
         flex-direction: column;
-        gap: 2rem;
         align-items: center;
         text-align: center;
     }
 
     .hero-image-wrapper {
         width: 220px;
-        order: -1; /* Kuva ylimmäksi */
+        margin: 1rem auto;
     }
 
     .hero-text {
+        width: 100%;
         padding: 0;
     }
 
-    .hero-header h1 {
-        font-size: 2.5rem;
-        margin-bottom: 0.5rem;
-    }
-
-    .role-container {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.3rem;
-    }
-
-    .role, .role-secondary {
-        font-size: 1.1rem;
-        white-space: normal;
-    }
-
-    .hero-description {
-        font-size: 0.95rem;
-        margin: 1rem 0;
-        padding: 0 1rem;
-    }
-
-    /* Siirretään About-osio pois */
     .hero-right {
-        display: none;
+        display: none; /* Piilotetaan about-osio mobiilissa */
     }
 
-    /* Muokataan sosiaalisia linkkejä */
-    .social-links {
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-top: 1rem;
-    }
-
-    /* Muokataan CTA-nappeja */
+    /* Varmistetaan että kaikki elementit mahtuvat näytölle */
+    .hero-header,
+    .role-container,
+    .hero-description,
     .cta-section {
-        flex-direction: column;
-        gap: 1rem;
         width: 100%;
-        padding: 0 1rem;
-    }
-
-    .btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    /* Piilotetaan ylimääräiset elementit */
-    .geometric-shapes,
-    .scroll-indicator {
-        display: none;
+        margin: 0;
+        padding: 0.5rem;
     }
 }
 

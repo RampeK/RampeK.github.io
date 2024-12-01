@@ -203,7 +203,7 @@ section.visible {
 }
 
 /* Mobiilioptimoidut tyylit */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     /* Korjaa navigaation asettelu mobiilissa */
     nav {
         padding: 1rem 0.5rem;
@@ -288,6 +288,17 @@ section.visible {
         width: 100%;
         justify-content: flex-start;
         padding: 1rem;
+    }
+
+    body {
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    .container {
+        width: 100%;
+        padding: 0;
+        overflow: hidden;
     }
 }
 
