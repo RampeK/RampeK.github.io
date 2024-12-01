@@ -67,7 +67,7 @@ const translations = {
             title: "Projektit",
             portfolio: {
                 title: "Portfolio Sivu",
-                description: "Moderni ja responsiivinen portfolio-sivusto, joka esittelee projektejani ja taitojani 3D-animaatioilla ja interaktiivisilla elementeillä"
+                description: "Moderni ja responsiivinen portfolio-sivusto, joka esittelee projektejani ja taitojani interaktiivisilla elementeillä"
             },
             cabin: {
                 title: "Mökkivarausjärjestelmä",
@@ -92,7 +92,8 @@ const translations = {
             interested: "Kiinnostuitko?",
             description: "Etsin harjoittelupaikkaa, jossa pääsen kehittämään osaamistani ja oppimaan uutta!"
         },
-        scroll: "Vieritä alas"
+        scroll: "Vieritä alas",
+        title: "Portfolio"
     },
     en: {
         nav: {
@@ -162,7 +163,7 @@ const translations = {
             title: "Projects",
             portfolio: {
                 title: "Portfolio Page",
-                description: "Modern and responsive portfolio website showcasing my projects and skills with 3D animations and interactive elements"
+                description: "Modern and responsive portfolio website showcasing my projects and skills with interactive elements"
             },
             cabin: {
                 title: "Cabin Managing Program",
@@ -187,6 +188,7 @@ const translations = {
             interested: "Interested?",
             description: "I'm looking for an internship position where I can develop my skills and learn new things!"
         },
-        scroll: "Scroll down"
+        scroll: "Scroll down",
+        title: "Portfolio"
     }
 }; 
