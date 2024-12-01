@@ -1,0 +1,11 @@
+# Kehitysympäristön tiedostot
+.DS_Store
+.vscode/
+.idea/
+
+# Väliaikaiset tiedostot
+*.log
+*.tmp
+
+# Node.js 
+node_modules/ 
