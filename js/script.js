@@ -131,22 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(element);
     });
 
-    // Scroll indicator
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const homeSection = document.querySelector('#home');
-
-    if (scrollIndicator && homeSection) {
-        window.addEventListener('scroll', () => {
-            const homeSectionBottom = homeSection.offsetTop + homeSection.offsetHeight;
-            
-            if (window.scrollY > homeSectionBottom - window.innerHeight / 2) {
-                scrollIndicator.style.opacity = '0';
-            } else {
-                scrollIndicator.style.opacity = '1';
-            }
-        });
-    }
-
     // 3D Card Tilt Effect
     document.addEventListener('DOMContentLoaded', function() {
         const cards = document.querySelectorAll('.project-card');

@@ -23,7 +23,6 @@
 @import 'sections/contact.css';
 
 /* Utils imports */
-@import 'utils/animations.css';
 @import 'utils/responsive.css';
 
 html {
@@ -34,98 +33,47 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    background: #0a0a0a linear-gradient(
+    background: linear-gradient(
         135deg,
-        rgba(86, 77, 177, 0.4) 0%,
-        transparent 50%,
-        rgba(76, 161, 175, 0.4) 100%
+        #0a0a0a 0%,
+        #1a1a1a 100%
     );
-    transform: translateZ(0);
     position: relative;
     overflow-x: hidden;
 }
 
-/* Modernimpi kiiltoefekti */
+/* Lisätään hienovarainen oranssi hehku */
 body::before {
     content: '';
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: radial-gradient(
-        circle at 50% 50%,
-        rgba(255, 165, 0, 0.05),
-        transparent 70%
-    );
-    z-index: -1;
-    animation: pulse 8s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 0.5; }
-    50% { opacity: 0.8; }
-}
-
-/* Paranneltu tausta-animaatio */
-.background-animation {
-    position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
-    overflow: hidden;
-    opacity: 0.15;
-}
-
-.background-animation span {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    background: linear-gradient(
-        45deg,
-        var(--accent-color),
-        rgba(255, 255, 255, 0.8)
+    background: radial-gradient(
+        circle at 50% 30%,
+        rgba(255, 165, 0, 0.03),
+        transparent 70%
     );
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
     pointer-events: none;
+    z-index: 0;
 }
 
-/* Lisätään enemmän animoituja elementtejä */
-.background-animation span:nth-child(1) {
-    top: 15%;
-    left: 10%;
-    animation: float 20s ease-in-out infinite;
-}
-
-.background-animation span:nth-child(2) {
-    top: 70%;
-    left: 85%;
-    animation: float 25s ease-in-out infinite;
-}
-
-.background-animation span:nth-child(3) {
-    top: 40%;
-    left: 60%;
-    animation: float 18s ease-in-out infinite;
-}
-
-/* Paranneltu float-animaatio */
-@keyframes float {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    25% {
-        transform: translate(100px, 50px) scale(1.2);
-    }
-    50% {
-        transform: translate(50px, 100px) scale(0.8);
-    }
-    75% {
-        transform: translate(-50px, 50px) scale(1.1);
-    }
+/* Lisätään toinen hehku eri kohtaan */
+body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 80% 80%,
+        rgba(255, 165, 0, 0.02),
+        transparent 70%
+    );
+    pointer-events: none;
+    z-index: 0;
 }
 
 .social-links {
@@ -146,86 +94,37 @@ body::before {
     width: 3.5rem;
     height: 3.5rem;
     background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(8px);
     border-radius: 50%;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     text-decoration: none;
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .social-link:hover {
     background: rgba(255, 165, 0, 0.15);
-    transform: translateX(8px) scale(1.05);
-    border-color: rgba(255, 165, 0, 0.3);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 165, 0, 0.4);
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
 }
 
 .social-link i {
     font-size: 1.6rem;
-    transition: transform 0.3s ease;
-}
-
-.social-link:hover i {
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .social-links {
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        padding: 1rem;
-        gap: 1.5rem;
-    }
-}
-
-/* Lisätään smooth scroll koko sivulle */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Lisätään section transition */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-}
-
-section.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Optimoi animoidut elementit */
-.animated-element {
-    will-change: transform;
-}
-
-.project-card {
-    contain: content;
-}
-
-.animated {
-    transform: translateZ(0);  /* Hardware acceleration */
-    transition: transform 0.3s ease-out;
 }
 
 /* Mobiilioptimoidut tyylit */
 @media (max-width: 992px) {
-    /* Korjaa navigaation asettelu mobiilissa */
     nav {
         padding: 1rem 0.5rem;
     }
     
     nav ul {
         display: flex;
-        flex-wrap: wrap;  /* Salli rivien katkeaminen */
+        flex-wrap: wrap;
         justify-content: center;
         gap: 0.5rem;
     }
 
-    /* Korjaa hero-osion asettelu */
     .hero-left {
         width: 100%;
         padding: 1rem;
@@ -236,14 +135,12 @@ section.visible {
         margin-top: 2rem;
     }
 
-    /* Korjaa projektikorttien grid */
     .projects-grid {
-        grid-template-columns: 1fr;  /* Yksi kortti per rivi mobiilissa */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
         padding: 1rem;
     }
 
-    /* Korjaa skill-kategorioiden asettelu */
     .skill-category {
         padding: 1rem;
     }
@@ -254,7 +151,6 @@ section.visible {
         gap: 0.8rem;
     }
 
-    /* Paranna about-dropdown käytettävyyttä */
     .about-tabs {
         flex-wrap: wrap;
         gap: 0.5rem;
@@ -266,7 +162,6 @@ section.visible {
         min-width: 100px;
     }
 
-    /* Korjaa sosiaalisten linkkien asettelu */
     .social-links {
         position: static;
         flex-direction: row;
@@ -275,7 +170,6 @@ section.visible {
         gap: 1.5rem;
     }
 
-    /* Paranna tekstien luettavuutta */
     .hero-header h1 {
         font-size: 2.5rem;
     }
@@ -284,7 +178,6 @@ section.visible {
         font-size: 1rem;
     }
 
-    /* Korjaa contact-osion asettelu */
     .contact-content {
         padding: 1rem;
     }
@@ -298,16 +191,6 @@ section.visible {
         justify-content: flex-start;
         padding: 1rem;
     }
-
-    body {
-        overflow-x: hidden;
-        position: relative;
-    }
-
-    .container {
-        width: 100%;
-        padding: 0;
-    }
 }
 
 /* Korjaukset pienille puhelimille */
@@ -317,7 +200,7 @@ section.visible {
     }
 
     .skill-tags {
-        grid-template-columns: 1fr;  /* Yksi tagi per rivi */
+        grid-template-columns: 1fr;
     }
 
     nav ul {
@@ -325,7 +208,7 @@ section.visible {
     }
 }
 
-/* Varmista että sivusto toimii myös landscape-moodissa */
+/* Landscape-moodi */
 @media (max-width: 932px) and (orientation: landscape) {
     .hero-content {
         flex-direction: row;
@@ -335,4 +218,109 @@ section.visible {
     .hero-image-wrapper {
         max-width: 40%;
     }
+}
+
+h1, h2, h3 {
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(
+        90deg,
+        var(--accent-color),
+        transparent
+    );
+}
+
+.project-card {
+    border: 1px solid rgba(255, 165, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.project-card:hover {
+    border-color: rgba(255, 165, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(255, 165, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.skill-item {
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.1);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(255, 165, 0, 0.1),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+
+.btn {
+    border: 1px solid rgba(255, 165, 0, 0.3);
+    box-shadow: 0 0 15px rgba(255, 165, 0, 0.1);
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px rgba(255, 165, 0, 0.2);
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-color);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+h2 {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+.btn.primary {
+    background: var(--accent-color);
+    color: #000;
+}
+
+.btn.secondary {
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+.lang-btn.active {
+    background: var(--accent-color);
+    color: #000;
+}
+
+.skill-item {
+    border: 1px solid rgba(255, 165, 0, 0.2);
 }

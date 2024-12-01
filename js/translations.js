@@ -92,7 +92,6 @@ const translations = {
             interested: "Kiinnostuitko?",
             description: "Etsin harjoittelupaikkaa, jossa pääsen kehittämään osaamistani ja oppimaan uutta!"
         },
-        scroll: "Vieritä alas",
         title: "Portfolio"
     },
     en: {
@@ -188,7 +187,6 @@ const translations = {
             interested: "Interested?",
             description: "I'm looking for an internship position where I can develop my skills and learn new things!"
         },
-        scroll: "Scroll down",
         title: "Portfolio"
     }
 }; 
