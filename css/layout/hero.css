@@ -173,25 +173,32 @@
     }
 
     .hero-text {
-        order: -1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-header {
+        order: -2;
     }
 
     .hero-image-wrapper {
+        order: -1;
         width: 200px;
-        margin: 0 auto;
+        margin: 1rem auto;
     }
 
     .cta-section {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: center;
         gap: 1rem;
-        width: 100%;
-        max-width: 300px;
-        margin: 2rem auto 0;
+        margin-top: 2rem;
     }
 
     .btn {
-        width: 100%;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        min-width: 130px;
+        width: auto;
     }
 
     .hero-header h1 {
@@ -232,6 +239,12 @@
 
     .role, .role-secondary {
         font-size: 1rem;
+    }
+
+    .btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.85rem;
+        min-width: 110px;
     }
 }
 

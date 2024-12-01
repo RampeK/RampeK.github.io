@@ -35,7 +35,7 @@
     );
     border-radius: 12px;
     padding: 2rem;
-    cursor: pointer;
+    cursor: default;
     backdrop-filter: blur(10px);
     height: 100%;
     display: flex;
@@ -83,11 +83,15 @@
 
 .project-links a {
     color: rgba(255, 255, 255, 0.7);
-    transition: color 0.2s ease;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 50%;
 }
 
 .project-links a:hover {
     color: var(--accent-color);
+    background: rgba(255, 165, 0, 0.1);
+    transform: scale(1.1);
 }
 
 .project-card h3 {
@@ -155,11 +159,7 @@
 }
 
 @media (max-width: 992px) {
-    .project-card {
-        transition: background-color 0.3s ease;
-    }
-
-    .project-card:active {
-        background-color: rgba(255, 165, 0, 0.1);
+    .project-links a {
+        padding: 12px;  /* Suurempi kosketusalue mobiililla */
     }
 }
