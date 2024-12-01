@@ -103,9 +103,9 @@ const translations = {
         },
         hero: {
             greeting: "Hello, I'm",
-            role: "Information Technology Engineering Student",
-            and: "and",
-            wannaBe: "wanna-be",
+            role: "Information Technology Engineering",
+            and: "Student and",
+            wannaBe: "upcoming",
             fullStack: "Full Stack Developer",
             description: "Specialized in modern web development and .NET technologies. Passionate about building scalable and user-friendly applications.",
             buttons: {
