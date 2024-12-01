@@ -370,30 +370,14 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.2rem;
+        gap: 0.3rem;
     }
 
-    .role {
+    .role, .role-secondary {
         width: 100%;
         font-size: 1rem;
         line-height: 1.4;
         text-align: center;
-        color: var(--accent-color);
-        margin-bottom: 0.2rem;
-    }
-
-    .role-secondary {
-        width: 100%;
-        font-size: 1rem;
-        line-height: 1.4;
-        text-align: center;
-        color: var(--accent-color);
-        display: block;
-        margin: 0;
-    }
-
-    .role-secondary span {
-        margin: 0 0.2rem;
     }
 
     .hero-description {

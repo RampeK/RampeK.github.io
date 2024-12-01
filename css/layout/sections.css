@@ -45,9 +45,7 @@ section::after {
 @media (max-width: 992px) {
     section {
         min-height: 100vh;
-        height: auto;
         padding: 2rem 1rem;
-        overflow-x: hidden;
     }
     
     .section-indicator {
