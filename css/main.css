@@ -7,7 +7,6 @@
 @import 'layout/navigation.css';
 @import 'layout/header.css';
 @import 'layout/hero.css';
-@import 'layout/sections.css';
 
 /* Components imports */
 @import 'components/buttons.css';
@@ -19,8 +18,8 @@
 @import 'components/scroll-indicator.css';
 
 /* Sections imports */
-@import 'sections/skills.css';
 @import 'sections/about.css';
+@import 'sections/skills.css';
 @import 'sections/projects.css';
 @import 'sections/contact.css';
 

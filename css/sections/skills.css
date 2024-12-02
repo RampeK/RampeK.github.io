@@ -37,8 +37,9 @@
     border-radius: 12px;
     padding: 1.5rem;
     border: 1px solid rgba(255, 165, 0, 0.2);
-    height: 600px;
-    min-height: 600px;
+    height: auto;
+    min-height: auto;
+    margin-bottom: 1rem;
 }
 
 .skill-category h3 {
@@ -60,8 +61,6 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
     margin-bottom: 1.5rem;
-    flex: 0 0 auto;
-    height: auto;
 }
 
 .skill-item {
@@ -154,11 +153,16 @@
 
 @media (max-width: 768px) {
     .skill-category {
-        height: 600px;
-        min-height: 600px;
+        height: auto;
+        min-height: auto;
+        margin-bottom: 2rem;
     }
     
     .skill-tags {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .skill-description {
+        min-height: auto;
     }
 }
