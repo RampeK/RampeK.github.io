@@ -152,17 +152,35 @@
 }
 
 @media (max-width: 768px) {
+    .skills-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
     .skill-category {
-        height: auto;
-        min-height: auto;
-        margin-bottom: 2rem;
+        width: 100%;
+        margin-bottom: 0;
     }
     
     .skill-tags {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
     }
 
     .skill-description {
-        min-height: auto;
+        position: relative;
+        z-index: 1;
+        background: rgba(15, 15, 15, 0.95);
+    }
+
+    .skill-category + .skill-category {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-grid {
+        gap: 3rem;
     }
 }
