@@ -1,54 +1,24 @@
-/* Yleinen osioiden tyyli */
 section {
-    min-height: 100vh;
     width: 100%;
     position: relative;
-    padding: 6rem 2rem;
 }
 
-/* Osioiden erottelu - tehdään viivasta hienovaraisempi */
-section::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1400px;
-    height: 1px;
-    background: linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 165, 0, 0.1),
-        transparent
-    );
-}
-
-/* Erittäin pehmeät taustaerottelut osioille */
 #home {
-    background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, transparent 70%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-#about {
-    background: linear-gradient(180deg, 
-        transparent 0%, 
-        rgba(0,0,0,0.05) 50%, 
-        transparent 100%
-    );
+section:first-of-type {
+    margin-top: 0;
 }
 
-#skills {
-    background: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.1) 100%);
-}
-
-/* Responsiivisuus */
-@media (max-width: 992px) {
+@media (max-width: 768px) {
     section {
-        min-height: 100vh;
-        padding: 2rem 1rem;
+        min-height: auto;
     }
     
-    .section-indicator {
-        display: none;
+    #home {
+        min-height: 100vh;
     }
 }

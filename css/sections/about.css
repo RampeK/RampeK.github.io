@@ -1,102 +1,149 @@
-.about-container {
-    min-height: 100vh;
+.about-section {
+    margin-top: 2rem;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: flex-start;
+}
+
+.about-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+    display: flex;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-    position: relative;
+    gap: 0.5rem;
 }
 
-.section-title {
-    font-size: 3rem;
-    margin-bottom: 3rem;
-    text-align: center;
-}
-
-.about-dropdown {
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 400px;
-    z-index: 10;
-}
-
-.about-toggle {
+.about-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
     width: 100%;
-    padding: 1rem 1.5rem;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    color: #fff;
+    max-width: 600px;
+}
+
+.about-card {
+    background: rgba(20, 20, 20, 0.8);
+    border: 1px solid rgba(255, 165, 0, 0.2);
+    border-radius: 8px;
+    width: 100%;
+    position: relative;
+    margin-bottom: 2px;
+}
+
+.about-card-toggle {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.about-toggle:hover {
-    background: rgba(255, 165, 0, 0.1);
-    border-color: var(--accent-color);
+.about-card-toggle:hover {
+    background: rgba(255, 165, 0, 0.05);
 }
 
-.about-content {
-    position: absolute;
-    top: calc(100% + 1rem);
-    right: 0;
-    width: 100%;
-    background: rgba(2, 12, 27, 0.95);
-    border-radius: 12px;
-    padding: 1.5rem;
-    transform: translateY(-10px);
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.about-content.active {
-    transform: translateY(0);
-    opacity: 1;
-    visibility: visible;
-}
-
-.about-tabs {
-    display: flex;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.tab-btn {
-    padding: 0.5rem 1rem;
-    background: transparent;
-    border: none;
-    color: rgba(255, 255, 255, 0.7);
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.tab-btn.active {
+.about-card-toggle h3 {
     color: var(--accent-color);
-    border-bottom: 2px solid var(--accent-color);
+    font-size: 1rem;
+    margin: 0;
+    text-align: left;
 }
 
-.tab-content {
+.about-card-toggle i {
+    color: var(--accent-color);
+    transition: transform 0.3s ease;
+}
+
+.about-card.active .about-card-toggle i {
+    transform: rotate(180deg);
+}
+
+.about-card-content {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(20, 20, 20, 0.98);
     display: none;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 165, 0, 0.3);
+}
+
+.about-card.active .about-card-content {
+    display: block;
+    padding: 1rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.about-card-content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.about-card-content::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.about-card-content::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 2px;
+}
+
+.about-card-content p {
+    font-size: 0.85rem;
     line-height: 1.6;
     color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    white-space: normal;
+    word-wrap: break-word;
 }
 
-.tab-content.active {
-    display: block;
-}
+@media (max-width: 768px) {
+    .about-section {
+        align-items: center;
+        text-align: center;
+        padding: 0 1rem;
+    }
 
-.about-intro {
-    font-size: 1.2rem;
-    opacity: 1 !important;
+    .about-grid {
+        align-items: center;
+        width: 100%;
+    }
+
+    .about-card {
+        max-width: 100%;
+    }
+
+    .about-card-toggle {
+        justify-content: center;
+        padding: 0.75rem 2rem;
+    }
+
+    .about-card-toggle i {
+        position: absolute;
+        right: 1rem;
+    }
+
+    .about-card-content {
+        position: static;
+        width: 100%;
+        margin-top: 0;
+        border-top: none;
+    }
+
+    .about-card.active .about-card-content {
+        border-top: 1px solid rgba(255, 165, 0, 0.3);
+    }
+
+    .about-card-content p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        padding: 0 0.5rem;
+    }
 }

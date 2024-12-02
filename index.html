@@ -30,7 +30,7 @@
         <span></span>
         <span></span>
     </div>
-    <header>
+    <header class="header">
         <nav>
             <div class="language-switch">
                 <button class="lang-btn" data-lang="en">EN</button>
@@ -56,16 +56,17 @@
             <div class="shape shape-2"></div>
         </div>
 
-        <div class="social-links">
-            <a href="https://github.com/RampeK" target="_blank" class="social-link">
-                <i class="fab fa-github"></i>
-            </a>
-            <a href="https://www.linkedin.com/in/rasmus-kuorikoski-9a2a6329a/" target="_blank" class="social-link">
-                <i class="fab fa-linkedin"></i>
-            </a>
-        </div>
+        <div class="hero-container">
+            <!-- Sosiaalisen median linkit vasemmalle -->
+            <div class="social-links-vertical">
+                <a href="https://github.com/RampeK" target="_blank" class="social-link">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rasmus-kuorikoski-9a2a6329a/" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
 
-        <div class="hero-content">
             <div class="hero-left">
                 <div class="hero-image-wrapper">
                     <div class="hero-image-container">
@@ -73,69 +74,72 @@
                         <div class="image-overlay"></div>
                     </div>
                 </div>
-
-                <div class="hero-text">
-                    <div class="hero-header">
-                        <span class="greeting" data-translate="hero.greeting">Hei, olen</span>
-                        <h1>Rasmus<br>Kuorikoski<span class="accent">.</span></h1>
-                        <div class="role-container">
-                            <p class="role">
-                                <span data-translate="hero.role">Tietotekniikan insinööriopiskelija</span>
-                            </p>
-                            <p class="role-secondary">
-                                <span data-translate="hero.and">ja</span>
-                                <span data-translate="hero.wannaBe">tuleva</span>
-                                <span data-translate="hero.fullStack">Full Stack Kehittäjä</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <div class="hero-description">
-                        <p data-translate="hero.description">
-                            Erikoistunut moderniin web-kehitykseen ja .NET-teknologioihin. 
-                            Intohimona rakentaa skaalautuvia ja käyttäjäystävällisiä sovelluksia.
-                        </p>
-                    </div>
-
-                    <div class="cta-section">
-                        <a href="#projects" class="btn primary">
-                            <span data-translate="hero.buttons.projects">Katso projektit</span>
-                            <i class="fas fa-arrow-right"></i>
-                        </a>
-                        <a href="#contact" class="btn secondary">
-                            <span data-translate="hero.buttons.contact">Ota yhteyttä</span>
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </div>
-                </div>
             </div>
 
-            <div class="hero-right">
-                <div class="about-dropdown">
-                    <button class="about-toggle">
-                        <span data-translate="about.title">Tietoa minusta</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    
-                    <div class="about-content">
-                        <div class="about-tabs">
-                            <button class="tab-btn active" data-tab="education" data-translate="about.tabs.education">Koulutus</button>
-                            <button class="tab-btn" data-tab="experience" data-translate="about.tabs.experience">Kokemus</button>
-                            <button class="tab-btn" data-tab="goals" data-translate="about.tabs.goals">Tavoitteet</button>
+            <div class="hero-content">
+                <div class="hero-header">
+                    <span class="greeting" data-translate="hero.greeting">Hei, olen</span>
+                    <h1>Rasmus<br>Kuorikoski<span class="accent">.</span></h1>
+                    <div class="role-container">
+                        <p class="role">
+                            <span data-translate="hero.role">Tietotekniikan insinööriopiskelija</span>
+                        </p>
+                        <p class="role-secondary">
+                            <span data-translate="hero.and">ja</span>
+                            <span data-translate="hero.wannaBe">tuleva</span>
+                            <span data-translate="hero.fullStack">Full Stack Kehittäjä</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="hero-description">
+                    <p data-translate="hero.description">
+                        Erikoistunut moderniin web-kehitykseen ja .NET-teknologioihin. 
+                        Intohimona rakentaa skaalautuvia ja käyttäjäystävällisiä sovelluksia.
+                    </p>
+                </div>
+
+                <div class="cta-section">
+                    <a href="#projects" class="btn primary">
+                        <span data-translate="hero.buttons.projects">Katso projektit</span>
+                    </a>
+                    <a href="#contact" class="btn secondary">
+                        <span data-translate="hero.buttons.contact">Ota yhteyttä</span>
+                    </a>
+                </div>
+
+                <div class="about-section">
+                    <h2 class="about-title" data-translate="about.title">Tietoa minusta<span class="accent">.</span></h2>
+                    <div class="about-grid">
+                        <div class="about-card">
+                            <button class="about-card-toggle">
+                                <h3 data-translate="about.tabs.education">Koulutus</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="about-card-content">
+                                <p data-translate="about.education"></p>
+                            </div>
+                        </div>
+                        <div class="about-overlay"></div>
+                        
+                        <div class="about-card">
+                            <button class="about-card-toggle">
+                                <h3 data-translate="about.tabs.experience">Kokemus</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="about-card-content">
+                                <p data-translate="about.experience"></p>
+                            </div>
                         </div>
                         
-                        <div class="tab-content active" id="education">
-                            <p data-translate="about.education">Opiskelen kolmatta vuotta Savonia-ammattikorkeakoulussa tietotekniikan insinööriksi. Koulutuksessa olen erikoistunut ohjelmointiin, tietojärjestelmien määrittelyyn, suunnitteluun ja toteutukseen. Keskeisiä osaamisalueitani ovat tekoäly, tietoverkot, tietoturva, tietokannat, pilvipalvelut ja IoT.</p>
-                        </div>
-                        
-                        <div class="tab-content" id="experience">
-                            <p data-translate="about.experience">
-                                Opinnoissani olen syventynyt erityisesti web-kehitykseen ja .NET-teknologioihin. Hallitsen ohjelmistojen suunnittelun ja toteutuksen sekä web- että sovelluskohtaisilla käyttöliittymillä. Kokemusta on myös tietokantojen integroinnista, valmisohjelmistojen räätälöinnistä sekä tietoverkkojen ja palvelinjärjestelmien suunnittelusta. Olen aktiivisesti osallistunut erilaisiin game jameihin ja hackathoneihin kehittääkseni taitojani ja verkostoituakseni muiden kehittäjien kanssa.
-                            </p>
-                        </div>
-                        
-                        <div class="tab-content" id="goals">
-                            <p data-translate="about.goals">Tavoitteenani on kehittyä tietotekniikan suunnittelun, käytön ja soveltamisen asiantuntijaksi. Etsin harjoittelupaikkaa, jossa pääsen työskentelemään teknologisen kehityksen kärkijoukoissa ja kehittämään palvelujen, sovellusten ja toiminnan suunnittelua. Olen innokas oppimaan uutta ja uskon, että voin tuoda tiimiin sekä tuoretta näkökulmaa että vahvat tiimityötaidot.</p>
+                        <div class="about-card">
+                            <button class="about-card-toggle">
+                                <h3 data-translate="about.tabs.goals">Tavoitteet</h3>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                            <div class="about-card-content">
+                                <p data-translate="about.goals"></p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -183,7 +187,7 @@
                     </div>
                     <div class="skill-description">
                         <p data-translate="skills.frontend.description">
-                            Frontend-kehittäjänä minulla on vahva osaaminen modernien web-sovellusten rakentamisessa. Hallitsen TypeScriptin ja modernin JavaScriptin käytön, sekä HTML:n ja CSS:n parhaat käytännöt. Kokemusta responsiivisesta suunnittelusta ja käyttöliittymien toteutuksesta.
+                            Frontend-kehittäjänä minulla on kokemusta modernien web-sovellusten rakentamisessa. Pääteknologioihini kuuluu JavaScript/TypeScript, jolla olen toteuttanut useita responsiivisia käyttöliittymiä. Hallitsen myös HTML:n ja CSS:n parhaat käytännöt.
                         </p>
                     </div>
                 </div>
@@ -224,7 +228,7 @@
                     </div>
                     <div class="skill-description">
                         <p data-translate="skills.backend.description">
-                            Backend-kehittäjänä erikoisosaamiseni on .NET-ympäristössä, missä olen toteuttanut useita web-sovelluksia C#:lla. Hallitsen myös Java- ja Python-kehityksen, sekä tietokantojen suunnittelun ja toteutuksen. REST API -rajapintojen kehittäminen ja mikropalveluarkkitehtuurit ovat tuttuja työkalupakin osia.
+                            Backend-kehittäjänä erikoisosaamiseni on .NET-ympäristössä, missä olen toteuttanut web-sovelluksia C#:lla. Hallitsen myös Java- ja Python-kehityksen, sekä tietokantojen suunnittelun ja toteutuksen. REST API -rajapintojen kehittäminen on osa päivittäistä työskentelyäni.
                         </p>
                     </div>
                 </div>
@@ -262,7 +266,7 @@
                     </div>
                     <div class="skill-description">
                         <p data-translate="skills.other.description">
-                            Hallitsen modernit DevOps-työkalut ja pilvipalvelut Azure ja AWS ympäristöissä. Kokemusta Docker konttiteknologioista ja Git versionhallinnasta. NoSQL tietokannat ja Linux ympäristöt ovat myös osa työkalupakkiani. Järjestelmien skaalautuvuus ja kyberturvallisuus ovat keskeisiä osaamisalueitani.
+                            Osaan käyttää moderneja DevOps-työkaluja ja pilvipalveluita Azure ja AWS ympäristöissä. Kokemusta löytyy konttiteknologioista (Docker) ja versionhallinnasta (Git). NoSQL-tietokannat ja Linux-ympäristöt ovat myös osa työkalupakkiani.
                         </p>
                     </div>
                 </div>
@@ -281,6 +285,7 @@
                     <div class="project-links">
                         <a href="https://github.com/RampeK/code-editor-pro" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>
+                            <span data-translate="projects.viewProject"></span>
                         </a>
                     </div>
                 </div>
@@ -302,6 +307,7 @@
                     <div class="project-links">
                         <a href="https://github.com/RampeK/solar-aurora-dashboard" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>
+                            <span data-translate="projects.viewProject"></span>
                         </a>
                     </div>
                 </div>
@@ -323,6 +329,7 @@
                     <div class="project-links">
                         <a class="github-link">
                             <i class="fab fa-github"></i>
+                            <span data-translate="projects.viewProject"></span>
                         </a>
                     </div>
                 </div>
@@ -342,6 +349,7 @@
                     <div class="project-links">
                         <a href="https://github.com/RampeK/RampeK.github.io" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>
+                            <span data-translate="projects.viewProject"></span>
                         </a>
                     </div>
                 </div>
@@ -363,6 +371,7 @@
                     <div class="project-links">
                         <a href="https://github.com/RampeK/Cabin-managing-program" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>
+                            <span data-translate="projects.viewProject"></span>
                         </a>
                     </div>
                 </div>
@@ -384,6 +393,7 @@
                     <div class="project-links">
                         <a href="https://github.com/RampeK/Let-Him-Cook-Game-Jam" target="_blank" class="github-link">
                             <i class="fab fa-github"></i>
+                            <span data-translate="projects.viewProject"></span>
                         </a>
                     </div>
                 </div>

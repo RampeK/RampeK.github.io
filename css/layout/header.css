@@ -3,7 +3,7 @@
     top: 0;
     left: 0;
     right: 0;
-    padding: 1.5rem 3rem;
+    padding: 0.5rem 2rem;
     background: rgba(18, 18, 18, 0.8);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -12,90 +12,136 @@
 
 /* Header muuttuu scrollatessa */
 .header.scrolled {
-    padding: 1rem 3rem;
+    padding: 0.7rem 2rem;
     background: rgba(18, 18, 18, 0.95);
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
 }
 
-.header-content {
-    max-width: 1400px;
-    margin: 0 auto;
+/* Navigaatiolinkit */
+.header nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-}
-
-.nav-links {
-    display: flex;
-    gap: 2.5rem;
-    align-items: center;
-}
-
-.nav-link {
-    color: rgba(255, 255, 255, 0.8);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
     position: relative;
-    padding: 0.5rem 0;
-    transition: all 0.3s ease;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* Hover efekti linkeille */
-.nav-link::after {
+.language-switch {
+    position: absolute;
+    left: 0;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.lang-btn {
+    min-width: 45px;
+    text-align: center;
+    padding: 0.5rem 0;
+}
+
+/* Navigaatiolinkit keskelle */
+.header nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0 0 0 120px;
+    padding: 0;
+}
+
+.header nav ul li {
+    min-width: 80px;
+    text-align: center;
+}
+
+.header nav a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+/* Aktiivisen linkin tyylit */
+.header nav a.active {
+    color: var(--accent-color);
+}
+
+/* Indikaattori aktiiviselle linkille */
+.header nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--accent-color);
+    background-color: var(--accent-color);
     transition: width 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #fff;
-}
-
-.nav-link:hover::after {
+.header nav a.active::after {
     width: 100%;
 }
 
-/* Aktiivinen linkki */
-.nav-link.active {
-    color: #fff;
-}
-
-.nav-link.active::after {
-    width: 100%;
-}
-
-/* Email-linkki */
-.email-link {
+/* Hover-efekti */
+.header nav a:hover {
     color: var(--accent-color);
-    font-weight: 500;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border: 1px solid rgba(255, 165, 0, 0.3);
-    border-radius: 4px;
 }
 
-.email-link:hover {
-    background: rgba(255, 165, 0, 0.1);
-    border-color: var(--accent-color);
+.header nav a:hover::after {
+    width: 100%;
+}
+
+/* Päivitetty margin ensimmäiselle sectiolle */
+section:first-of-type {
+    margin-top: 60px;
 }
 
 /* Responsiivisuus */
 @media (max-width: 768px) {
     .header {
-        padding: 1rem;
+        padding: 0.5rem 1rem;
     }
     
-    .nav-links {
-        gap: 1.5rem;
+    .header.scrolled {
+        padding: 0.6rem 1rem;
     }
     
-    .email-link {
-        display: none;
+    .header nav {
+        justify-content: flex-start;
+        gap: 2rem;
+        padding: 0;
+    }
+
+    .language-switch {
+        position: static;
+        margin-right: auto;
+    }
+
+    .header nav ul {
+        margin-left: auto;
+        gap: 1rem;
+    }
+
+    .lang-btn {
+        min-width: 35px;
+        padding: 0.3rem 0;
+    }
+}
+
+/* Mobiiliresponsiivisuus */
+@media (max-width: 576px) {
+    .header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .header nav ul li {
+        min-width: auto;
+        flex: 0 0 auto;
     }
 }

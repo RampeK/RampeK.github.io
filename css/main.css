@@ -15,15 +15,18 @@
 @import 'components/stats.css';
 @import 'components/tech-stack.css';
 @import 'components/language-switch.css';
+@import 'components/about-dropdown.css';
+@import 'components/scroll-indicator.css';
 
 /* Sections imports */
 @import 'sections/skills.css';
-@import 'sections/about.css'; 
+@import 'sections/about.css';
 @import 'sections/projects.css';
 @import 'sections/contact.css';
 
 /* Utils imports */
 @import 'utils/responsive.css';
+@import 'utils/animations.css';
 
 html {
     scroll-behavior: smooth;
