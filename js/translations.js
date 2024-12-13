@@ -82,8 +82,10 @@ const translations = {
                 title: "Code Editor Pro",
                 description: "Moderni selainpohjainen koodieditori reaaliaikaisella koodianalyysillä"
             },
-            comingSoon: "Tulossa pian",
-            future: "Jännittävä uusi projekti kehitteillä. Pysy kuulolla!",
+            essay: {
+                title: "AI Essay Assistant",
+                description: "Tekoälyavusteinen akateemisen kirjoittamisen työkalu, joka auttaa opiskelijoita suunnittelemaan, jäsentämään ja parantamaan esseitään"
+            },
             aurora: {
                 description: "Työpöytäsovellus, joka yhdistää reaaliaikaisen aurinkoaktiivisuuden seurannan ja revontulien ennustamisen Suomessa. Sisältää interaktiivisia visualisointeja avaruussäädatasta."
             },
@@ -179,8 +181,10 @@ const translations = {
                 title: "Code Editor Pro",
                 description: "A modern browser-based code editor with real-time code analysis"
             },
-            comingSoon: "Coming Soon",
-            future: "Exciting new project in development. Stay tuned for updates!",
+            essay: {
+                title: "AI Essay Assistant",
+                description: "An AI-powered academic writing tool that helps students plan, structure, and improve their essays"
+            },
             aurora: {
                 description: "A desktop application that combines real-time solar activity monitoring and aurora forecasting in Finland. Features interactive visualizations of space weather data."
             },
